@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Play Tic Tac Toe against a friend or the computer — pure Java backend, no external dependencies." />
+  <title>Tic Tac Toe 🎮</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-x">X</span>
+        <span class="logo-sep">vs</span>
+        <span class="logo-o">O</span>
+      </div>
+      <h1>Tic Tac Toe</h1>
+      <button id="themeBtn" class="theme-btn" title="Toggle light / dark theme">🌙</button>
+    </header>
+
+    <!-- Setup controls -->
+    <div class="controls">
+      <input id="player1" type="text" placeholder="Player 1 name" autocomplete="off" />
+      <input id="player2" type="text" placeholder="Player 2 name" autocomplete="off" />
+      <label class="ai-label" for="ai">
+        <input type="checkbox" id="ai" />
+        <span class="ai-toggle"></span>
+        vs&nbsp;Computer
+      </label>
+      <button id="newBtn">New Game</button>
+    </div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-card" id="scoreX">
+        <div class="score-sym x-color">X</div>
+        <div class="score-name" id="p1name">Player 1</div>
+        <div class="score-val" id="scoreXVal">0</div>
+      </div>
+      <div class="score-mid">
+        <div class="score-vs">VS</div>
+        <div class="score-draws"><span id="drawCount">0</span> draw(s)</div>
+      </div>
+      <div class="score-card" id="scoreO">
+        <div class="score-sym o-color">O</div>
+        <div class="score-name" id="p2name">Player 2</div>
+        <div class="score-val" id="scoreOVal">0</div>
+      </div>
+    </div>
+
+    <!-- Game status -->
+    <div id="status" class="status">Click <strong>New Game</strong> to start</div>
+
+    <!-- AI thinking indicator -->
+    <div id="thinkingIndicator" class="thinking-indicator" style="display:none">
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      Computer is thinking…
+    </div>
+
+    <!-- Board -->
+    <div id="board" class="board"></div>
+
+    <footer class="footer">Pure Java · Zero external dependencies</footer>
+  </div>
+
+  <!-- Game Over Overlay -->
+  <div id="gameOverlay" class="game-overlay" style="display:none">
+    <div class="game-over-card">
+      <div id="overlayEmoji" class="overlay-emoji">🏆</div>
+      <div id="overlayMsg" class="overlay-msg">Player 1 Wins!</div>
+      <button id="overlayBtn" class="overlay-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
