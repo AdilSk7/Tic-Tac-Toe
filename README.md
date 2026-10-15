@@ -91,7 +91,26 @@ The `IGameLogic` interface defines common game operations without exposing their
 
 `SmartGameLogic` extends `GameLogic` and reuses its existing game functionality.
 
-```java
-public class SmartGameLogic extends GameLogic {
-    // Computer game logic
-}
+### 🔹 Polymorphism
+
+The `IGameLogic` interface allows the application to work with different implementations such as `GameLogic` and `SmartGameLogic`.
+
+### 🔹 Interface
+
+`IGameLogic` defines the common operations that must be implemented by the game logic classes.
+
+### 🔹 Composition
+
+`GameState` contains an `IGameLogic` object to manage the actual game rules and board operations.
+
+### 🔹 Method Overloading
+
+`GameState` provides multiple constructors with different parameters for creating game instances.
+
+### 🔹 Concurrency
+
+`ConcurrentHashMap` is used to safely maintain multiple game sessions in the web server.
+
+### 🔹 Exception Handling
+
+The application uses `try-catch` blocks to handle invalid requests and runtime exceptions safely.
